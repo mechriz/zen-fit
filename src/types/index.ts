@@ -35,6 +35,7 @@ export interface Exercise {
 export interface Therapist {
   id: string;
   name: string;
+  email: string;
   specialization: string[];
   bio: string;
   avatar: string;
@@ -42,6 +43,12 @@ export interface Therapist {
   reviewCount: number;
   pricePerSession: number;
   availability: TimeSlot[];
+  licenseNumber: string;
+  yearsExperience: number;
+  education: string[];
+  languages: string[];
+  verified: boolean;
+  joinedAt: Date;
 }
 
 export interface Trainer {
@@ -68,12 +75,46 @@ export interface Appointment {
   type: 'therapy' | 'training';
   providerId: string;
   providerName: string;
+  clientId: string;
+  clientName: string;
   date: string;
   time: string;
   duration: number;
-  status: 'scheduled' | 'completed' | 'cancelled';
+  status: 'scheduled' | 'completed' | 'cancelled' | 'no-show';
   price: number;
   notes?: string;
+  sessionType: 'video' | 'phone' | 'chat';
+  paymentStatus: 'pending' | 'paid' | 'refunded';
+}
+
+export interface SessionNote {
+  id: string;
+  appointmentId: string;
+  therapistId: string;
+  clientId: string;
+  content: string;
+  goals: string[];
+  nextSteps: string[];
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Client {
+  id: string;
+  name: string;
+  email: string;
+  age: number;
+  avatar?: string;
+  mentalHealthGoals: string[];
+  joinedAt: Date;
+  lastSessionDate?: Date;
+  totalSessions: number;
+  currentMoodScore: number;
+  emergencyContact?: {
+    name: string;
+    phone: string;
+    relationship: string;
+  };
 }
 
 export interface Progress {
@@ -90,4 +131,10 @@ export interface Progress {
     therapySessions: number;
     lastSessionDate?: Date;
   };
+}
+
+export interface TherapistAuth {
+  isAuthenticated: boolean;
+  therapist: Therapist | null;
+  token?: string;
 }

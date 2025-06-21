@@ -8,9 +8,10 @@ A comprehensive wellness platform targeting Gen Z users (16-24) that integrates 
 - **User Onboarding**: Personalized setup based on fitness and mental health goals
 - **Workout Module**: Curated video workout plans with progress tracking
 - **Mental Wellness Support**: Connect with licensed therapists and book sessions
+- **Therapist Portal**: Complete management system for therapists to manage clients and sessions
 - **Appointment Scheduling**: Real-time booking system for therapy and training sessions
 - **Mobile Payments**: Integrated M-Pesa payment system
-- **Progress Dashboard**: Comprehensive tracking of fitness and mental health journey
+- **User Dashboard**: Comprehensive tracking of fitness and mental health journey
 
 ### User Experience
 - Mobile-first responsive design
@@ -19,9 +20,28 @@ A comprehensive wellness platform targeting Gen Z users (16-24) that integrates 
 - Real-time progress tracking
 - Achievement system and gamification
 
+### Therapist Portal Features
+- **Secure Login**: Authentication system for therapists
+- **Client Management**: View and manage all clients with detailed profiles
+- **Schedule Management**: View daily, weekly, and monthly schedules
+- **Session Notes**: Create and manage detailed session notes
+- **Progress Tracking**: Monitor client progress and mood scores
+- **Dashboard Analytics**: Overview of practice statistics and performance
+
 ## 🚀 Live Demo
 
 Visit the live application: [https://rad-dusk-48a851.netlify.app](https://rad-dusk-48a851.netlify.app)
+
+### Demo Access
+
+#### User Portal
+- Complete the onboarding flow to access the main app
+
+#### Therapist Portal
+- URL: `/therapist`
+- Demo Credentials:
+  - Email: `sarah.johnson@zenfit.co.ke`
+  - Password: `password123`
 
 ## 🛠️ Tech Stack
 
@@ -35,8 +55,11 @@ Visit the live application: [https://rad-dusk-48a851.netlify.app](https://rad-du
 
 ## 📱 Screenshots
 
-### Dashboard
+### User Dashboard
 ![Dashboard](https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800)
+
+### Therapist Portal
+![Therapist Dashboard](https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=800)
 
 ### Workout Module
 ![Workouts](https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&cs=tinysrgb&w=800)
@@ -63,12 +86,19 @@ zenfit-wellness-app/
 │   │   │   └── OnboardingFlow.tsx
 │   │   ├── Profile/
 │   │   │   └── UserProfile.tsx
+│   │   ├── Therapist/
+│   │   │   ├── TherapistApp.tsx
+│   │   │   ├── TherapistLogin.tsx
+│   │   │   ├── TherapistDashboard.tsx
+│   │   │   ├── TherapistLayout.tsx
+│   │   │   └── ClientManagement.tsx
 │   │   ├── Wellness/
 │   │   │   └── WellnessModule.tsx
 │   │   └── Workouts/
 │   │       └── WorkoutModule.tsx
 │   ├── context/
-│   │   └── AppContext.tsx
+│   │   ├── AppContext.tsx
+│   │   └── TherapistContext.tsx
 │   ├── types/
 │   │   └── index.ts
 │   ├── App.tsx
@@ -136,13 +166,21 @@ The built files will be in the `dist` directory.
 - Crisis support resources
 - Progress tracking for mental health goals
 
-### 4. Payment Integration
+### 4. Therapist Portal
+- **Authentication**: Secure login system for therapists
+- **Client Management**: Comprehensive client profiles and progress tracking
+- **Schedule Management**: View and manage appointments and availability
+- **Session Notes**: Create, edit, and manage detailed session notes
+- **Analytics Dashboard**: Practice overview with key metrics and insights
+- **Communication Tools**: Contact clients via phone, email, or messaging
+
+### 5. Payment Integration
 - M-Pesa payment simulation
 - Session booking with payment
 - Payment confirmation flow
 - Transaction history
 
-### 5. Dashboard & Analytics
+### 6. Dashboard & Analytics
 - Weekly progress visualization
 - Achievement system
 - Upcoming appointments
@@ -221,6 +259,9 @@ No environment variables are currently required for basic functionality.
 - [x] Appointment scheduling
 - [x] M-Pesa payment simulation
 - [x] Progress dashboard
+- [x] Therapist portal with login
+- [x] Client management system
+- [x] Session notes functionality
 
 ### Phase 2 (Planned)
 - [ ] Real M-Pesa API integration
@@ -229,6 +270,8 @@ No environment variables are currently required for basic functionality.
 - [ ] Advanced analytics and insights
 - [ ] Social features and community
 - [ ] Offline mode support
+- [ ] Calendar integration for therapists
+- [ ] Automated appointment reminders
 
 ### Phase 3 (Future)
 - [ ] AI-powered workout recommendations
@@ -236,6 +279,7 @@ No environment variables are currently required for basic functionality.
 - [ ] Nutrition tracking
 - [ ] Group therapy sessions
 - [ ] Marketplace for wellness products
+- [ ] Multi-language support (Swahili, English)
 
 ## 🐛 Known Issues
 
@@ -243,6 +287,7 @@ No environment variables are currently required for basic functionality.
 - Video playback requires external hosting
 - Real-time notifications not implemented
 - Calendar sync not available
+- Therapist portal schedule management is placeholder
 
 ## 📄 License
 
@@ -253,6 +298,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Frontend Development**: React + TypeScript
 - **UI/UX Design**: Tailwind CSS + Custom Components
 - **Payment Integration**: M-Pesa API (Simulated)
+- **Therapist Portal**: Complete management system
 
 ## 📞 Support
 

@@ -28,22 +28,54 @@ interface AppProviderProps {
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [isOnboarded, setIsOnboarded] = useState(false);
   const [progress, setProgress] = useState<Progress>({
     workouts: {
-      totalSessions: 0,
-      totalMinutes: 0,
-      streak: 0,
+      totalSessions: 12,
+      totalMinutes: 480,
+      streak: 5,
       weeklyGoal: 5,
-      weeklyProgress: 0,
+      weeklyProgress: 3,
     },
     mentalHealth: {
       moodScore: 7,
-      journalEntries: 0,
-      therapySessions: 0,
+      journalEntries: 8,
+      therapySessions: 3,
     },
   });
+
+  const [appointments, setAppointments] = useState<Appointment[]>([
+    {
+      id: '1',
+      type: 'therapy',
+      providerId: '1',
+      providerName: 'Dr. Sarah Johnson',
+      clientId: 'user-1',
+      clientName: 'Current User',
+      date: '2024-12-25',
+      time: '10:00 AM',
+      duration: 50,
+      status: 'scheduled',
+      price: 2000,
+      sessionType: 'video',
+      paymentStatus: 'paid'
+    },
+    {
+      id: '2',
+      type: 'therapy',
+      providerId: '2',
+      providerName: 'Michael Chen',
+      clientId: 'user-1',
+      clientName: 'Current User',
+      date: '2024-12-27',
+      time: '2:00 PM',
+      duration: 50,
+      status: 'scheduled',
+      price: 1800,
+      sessionType: 'video',
+      paymentStatus: 'paid'
+    }
+  ]);
 
   return (
     <AppContext.Provider

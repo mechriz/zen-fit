@@ -8,6 +8,7 @@ import WorkoutModule from './components/Workouts/WorkoutModule';
 import WellnessModule from './components/Wellness/WellnessModule';
 import AppointmentScheduler from './components/Appointments/AppointmentScheduler';
 import UserProfile from './components/Profile/UserProfile';
+import TherapistApp from './components/Therapist/TherapistApp';
 
 const AppContent: React.FC = () => {
   const { isOnboarded } = useApp();
@@ -34,7 +35,13 @@ function App() {
   return (
     <AppProvider>
       <Router>
-        <AppContent />
+        <Routes>
+          {/* Therapist Portal Routes */}
+          <Route path="/therapist/*" element={<TherapistApp />} />
+          
+          {/* Main App Routes */}
+          <Route path="/*" element={<AppContent />} />
+        </Routes>
       </Router>
     </AppProvider>
   );
